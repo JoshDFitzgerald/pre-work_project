@@ -39,8 +39,8 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![](your-link-here)
-
+![](https://cdn.glitch.com/194bfe5f-db5a-4757-a4cb-ba29910f3541%2Fezgif.com-gif-maker%20(1).gif?v=1616359911956)
+(The Framerate of the gif couldn't quite catch up to the speed of the clicks of the buttons because they were so fast towards the end)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
@@ -53,7 +53,7 @@ N/A
 
 I had relatively little trouble until it came time for the computer to initiate the first tone and visual cue upon the user pressing the start button. I could not figure out what exactly what the problem was but through debugging and seeing the feedback in the console, I realized there was some sort of error in the playSingleClue function, particularly when it called the lightButton function. 
 I tried tracing where the logic error was in my implementation, and when I compared my code and how it differed from the tutorial code, I realized I had changed my button names to "firstButton, secondButton, etc." from the tutorial version of "button1, button2, etc." and changed them back to match the tutorial. This removed the error and successfully showed the first button with its corresponding tone when the user pressed start.
-Another area of trouble I encountered was the incrementation of the clueHoldTime variable. When I had originally incremented the variable in the for loop, I chose a relatively small incrementation of -25 each iteration. It appeared to be working smoothly each round, but would suddenly speed up an incredible amount at a later round without a corresponding tone. To get around this, I simply incremented less and would test each new value until the problem stopped occurring.
+Another area of trouble I encountered was the incrementation of the clueHoldTime variable. When I had originally incremented the variable in the for loop, I did not do anything to reset the variable, so after a number of games, the buttons would become incredibly fast, and I could not figure out why. I decided to initialize the clueHoldTime variable in the startGame function so that way it would reset with every new game to avoid the incredibly fast sequences that were occurring.
 
 
 

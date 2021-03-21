@@ -9,7 +9,7 @@ var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
-var clueHoldTime = 1000 //how long to hold each clue's light/sound
+var clueHoldTime //how long to hold each clue's light/sound
 
 function startGame(){
     progress = 0;
@@ -17,6 +17,7 @@ function startGame(){
     document.getElementById("startBtn").classList.add("hidden");
     document.getElementById("stopBtn").classList.remove("hidden");
     playClueSequence();
+    clueHoldTime = 1000
 }
 
 function stopGame(){
@@ -49,8 +50,8 @@ function playClueSequence(){
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
     delay += clueHoldTime 
     delay += cluePauseTime;
-    clueHoldTime = clueHoldTime - 18
   }
+  clueHoldTime = clueHoldTime - 125
 }
 
 function guess(btn){
